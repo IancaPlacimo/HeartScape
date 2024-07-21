@@ -1,0 +1,140 @@
+$cor-principal: #14294e;
+
+* {
+  box-sizing: border-box;
+}
+
+@keyframes rolate {
+  100% {
+    background-position: 25% 50%;
+  }
+}
+
+.conteudo {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  height: 100vh;
+  padding: 0 24px;
+  background-image: url("../../../assets/img/BG22.jpg") !important;
+  // background-color: #137dc5;
+  background-size: contain;
+  background-repeat: no-repeat; /* Evita a repetição da imagem */
+
+  color: #000;
+  animation: rotate 5s infinite alternate linear;
+}
+
+.login {
+  position: fixed;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 90%;
+  padding: 70px 30px 44px;
+  border-radius: 1.25rem;
+  background: #ffffff;
+  text-align: center;
+}
+
+.login > img {
+  width: 160px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.login > h2 {
+  font-size: 36px;
+  font-weight: 600;
+  margin: 0 0 30px;
+}
+
+.login > h3 {
+  color: rgb(0 0 0 /38%);
+  margin: 0 0 6px;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.login-form {
+  display: grid;
+  gap: 20px;
+  place-items: center;
+  width: 100%;
+  margin: 0;
+}
+
+.form > :is(input, button) {
+  height: 56px;
+  width: 100%;
+  outline: none;
+  padding: 0;
+  border-radius: 10px;
+  font-family: inherit;
+}
+
+.form > input {
+  background: #eeeeee;
+  max-width: 500px;
+  text-align: center;
+  border: 0;
+  padding: 0;
+}
+
+.form > button {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  max-width: 500px;
+  height: 56px;
+  background: $cor-principal;
+  color: #f9f9f9;
+  border: 0;
+  letter-spacing: 2px;
+}
+
+.login-form > a {
+  color: $cor-principal;
+  font-size: 16px;
+  text-align: left;
+  text-decoration: none;
+}
+
+// Responsividade
+
+@media (width >= 500px) {
+  .conteudo {
+    padding: 0;
+  }
+
+  .login {
+    width: 70%;
+  }
+
+  .conteudo {
+    background-color: $cor-principal;
+  }
+}
+
+@media (width >= 750px) {
+  .login {
+    top: 0;
+    right: 0;
+    left: auto;
+    translate: 0 0;
+    margin: 0;
+    height: 100%;
+    width: 50%;
+    border-radius: 0;
+    padding-top: 240px;
+  }
+}
+
+@media (max-width: 500px) {
+  .conteudo {
+    background-color: $cor-principal;
+  }
+}
