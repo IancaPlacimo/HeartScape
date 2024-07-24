@@ -1,39 +1,70 @@
-/* Layout Geral */
-.layout-geral {
-  display: grid;
-  grid-template-rows: 70% 1fr; /* 70% para o conteúdo principal e 30% para os dados e estatísticas */
-  grid-template-columns: 160px 1fr 1fr; /* Coluna fixa para o menu lateral e duas colunas proporcionais para o conteúdo */
-  grid-template-areas:
-    "sidebar main main"
-    "sidebar dados estatisticas";
-  height: 100vh; /* Ajusta a altura para a visualização total da tela */
-  gap: 10px; /* Espaço entre as áreas */
+/* Estilos base para o layout */
+$bg-header: #14294e;
+$font: "Cinzel", serif;
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Desktop e Tablets */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  flex: 1; /* Faz com que o main ocupe o espaço restante entre o header e o footer */
+  display: flex;
+  flex-direction: column;
+  justify-content: start; /* Centraliza o conteúdo horizontalmente */
+  align-items: center; /* Centraliza o conteúdo verticalmente */
+  width: 100%; /* Garante que o main ocupe toda a largura */
+  height: 100%;
+
+  h1 {
+    padding-top: 0px !important;
+  }
+}
+
+app-header,
+app-footer {
+  background-color: #f471c1; /* Exemplo de cor de fundo, ajuste conforme necessário */
+  padding: 20px; /* Ajuste conforme necessário */
+  width: 100%; /* Garante que o header e footer ocupem toda a largura */
+}
+
 @media (min-width: 768px) {
   .layout-geral {
+    // max-width: 1400px;
+    display: grid;
     grid-template-rows: 70% 1fr; /* 70% para o conteúdo principal e 30% para os dados e estatísticas */
-    grid-template-columns: 300px 1fr 1fr; /* Coluna fixa para o menu lateral e duas colunas proporcionais para o conteúdo */
+    grid-template-columns: 230px 1fr 1fr; /* Coluna fixa para o menu lateral e duas colunas proporcionais para o conteúdo */
     grid-template-areas:
       "sidebar main main"
       "sidebar dados estatisticas";
   }
 
   nav {
-    padding: 10px;
+    padding: 20px;
     grid-area: sidebar;
-    background-color: #f6c356;
+    background-color: $bg-header;
+    color: white;
     height: 100vh; /* Garantir que o menu lateral ocupe toda a altura da tela */
   }
   main {
-    padding: 10px;
+    // padding: 10px;
     grid-area: main;
     text-align: center;
     background-color: #b2ee94;
   }
   .dados {
-    padding: 10px;
+    padding: 10px 20px;
     grid-area: dados;
     background-color: #ff8983;
   }
@@ -44,9 +75,38 @@
   }
 }
 
+.div-cards {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  gap: 20px;
+}
+
+.div-cards .card {
+  border: 1px solid black;
+  width: 23%;
+  height: 200px;
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 0;
+}
+
 /* Layout para dispositivos móveis */
 @media (max-width: 767px) {
   .layout-geral {
+    display: grid;
     grid-template-rows: auto auto auto auto; /* Adapta a altura das linhas para dispositivos móveis */
     grid-template-columns: 1fr; /* Colunas únicas, o menu lateral e o conteúdo são empilhados verticalmente */
     grid-template-areas:
@@ -56,10 +116,24 @@
       "estatisticas";
   }
 
+  .div-cards {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+    .card {
+      width: 50%;
+    }
+  }
+
+  nav {
+    text-align: center;
+  }
+
   nav {
     grid-area: sidebar;
-    background-color: #f6c356;
-    height: auto; /* Ajusta a altura do menu lateral para dispositivos móveis */
+    background-color: $bg-header;
+    color: white;
+    height: auto;
   }
   main {
     grid-area: main;
