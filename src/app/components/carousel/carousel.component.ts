@@ -137,9 +137,17 @@ export class CarouselComponent {
       }
     });
 
-    window.addEventListener('resize', () => this.createCarousel());
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', () => this.createCarousel());
+    }
 
     this.update();
     this.createCarousel();
+  }
+
+  ngOnDestroy(): void {
+    if (typeof window !== 'undefined') {
+      window.removeEventListener('resize', () => this.createCarousel());
+    }
   }
 }

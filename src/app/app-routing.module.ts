@@ -4,19 +4,10 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: LoginComponent,
-  },
-  // { path: '**', redirectTo: 'home' },
-  {
-    path: 'login',
-    component: LoginComponent,
-  },
-  {
-    path: 'home',
-    component: HomeComponent,
-  },
+  { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' }, // Redireciona para a home se a rota estiver vazia
+  { path: '**', redirectTo: 'login' }, // Redireciona para o login para rotas não encontradas
 ];
 
 @NgModule({

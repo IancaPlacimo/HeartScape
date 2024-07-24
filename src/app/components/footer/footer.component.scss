@@ -1,0 +1,16 @@
+$bg-header: #14294e;
+$font: "Cinzel", serif;
+
+footer {
+  background: $bg-header;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    margin-bottom: 0px;
+  }
+}

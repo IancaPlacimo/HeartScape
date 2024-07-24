@@ -1,1 +1,48 @@
-<p>header works!</p>
+<header>
+  <div class="conteudo">
+    <img src="../../../assets/img/HS-logo-claro-pe 1.svg" alt="Logo" />
+    <ul class="conteudo__link">
+      <li class="conteudo__link__links"><a href="/">Home</a></li>
+      <li class="conteudo__link__links"><a href="/sobre">Sobre</a></li>
+      <li class="conteudo__link__links"><a href="/explorar">Explorar</a></li>
+      <li class="conteudo__link__links">
+        <a href="/perfil" *ngIf="isLoggedIn">Meu Perfil</a>
+      </li>
+      <li class="conteudo__link__links">
+        <a href="/publicar" *ngIf="isLoggedIn">Publicar</a>
+      </li>
+      <li class="conteudo__link__links"><a href="/contato">Contato</a></li>
+      <li class="conteudo__link__links"><a href="/ajuda">Ajuda</a></li>
+      <!-- <li class="conteudo__link__links">
+        <button (click)="toggleTheme()">Modo Escuro/Modo Claro</button>
+      </li> -->
+      <li class="conteudo__link__links">
+        <a href="/login" *ngIf="isLoggedIn">Sair</a>
+      </li>
+    </ul>
+    <!-- <div class="menu-toggle">
+      <input type="checkbox" id="menu-toggle" class="toggle" />
+      <label for="menu-toggle" class="menu-icon" style="color: blanchedalmond"
+        >☰</label
+      >
+    </div> -->
+  </div>
+  <!-- <nav class="mobile-menu">
+    <ul class="mobile-menu__links">
+      <li class="mobile-menu__link"><a href="/">Home</a></li>
+      <li class="mobile-menu__link"><a href="/sobre">Sobre</a></li>
+      <li class="mobile-menu__link"><a href="/explorar">Explorar</a></li>
+      <li class="mobile-menu__link">
+        <a href="/perfil" *ngIf="isLoggedIn">Meu Perfil</a>
+      </li>
+      <li class="mobile-menu__link">
+        <a href="/publicar" *ngIf="isLoggedIn">Publicar</a>
+      </li>
+      <li class="mobile-menu__link"><a href="/contato">Contato</a></li>
+      <li class="mobile-menu__link"><a href="/ajuda">Ajuda</a></li>
+      <li class="mobile-menu__link">
+        <a href="/logout" *ngIf="isLoggedIn">Sair</a>
+      </li>
+    </ul>
+  </nav> -->
+</header>

@@ -1,0 +1,76 @@
+/* Layout Geral */
+.layout-geral {
+  display: grid;
+  grid-template-rows: 70% 1fr; /* 70% para o conteúdo principal e 30% para os dados e estatísticas */
+  grid-template-columns: 160px 1fr 1fr; /* Coluna fixa para o menu lateral e duas colunas proporcionais para o conteúdo */
+  grid-template-areas:
+    "sidebar main main"
+    "sidebar dados estatisticas";
+  height: 100vh; /* Ajusta a altura para a visualização total da tela */
+  gap: 10px; /* Espaço entre as áreas */
+}
+
+/* Desktop e Tablets */
+@media (min-width: 768px) {
+  .layout-geral {
+    grid-template-rows: 70% 1fr; /* 70% para o conteúdo principal e 30% para os dados e estatísticas */
+    grid-template-columns: 300px 1fr 1fr; /* Coluna fixa para o menu lateral e duas colunas proporcionais para o conteúdo */
+    grid-template-areas:
+      "sidebar main main"
+      "sidebar dados estatisticas";
+  }
+
+  nav {
+    padding: 10px;
+    grid-area: sidebar;
+    background-color: #f6c356;
+    height: 100vh; /* Garantir que o menu lateral ocupe toda a altura da tela */
+  }
+  main {
+    padding: 10px;
+    grid-area: main;
+    text-align: center;
+    background-color: #b2ee94;
+  }
+  .dados {
+    padding: 10px;
+    grid-area: dados;
+    background-color: #ff8983;
+  }
+  .estatisticas {
+    padding: 10px;
+    grid-area: estatisticas;
+    background-color: #99c2f3;
+  }
+}
+
+/* Layout para dispositivos móveis */
+@media (max-width: 767px) {
+  .layout-geral {
+    grid-template-rows: auto auto auto auto; /* Adapta a altura das linhas para dispositivos móveis */
+    grid-template-columns: 1fr; /* Colunas únicas, o menu lateral e o conteúdo são empilhados verticalmente */
+    grid-template-areas:
+      "sidebar"
+      "main"
+      "dados"
+      "estatisticas";
+  }
+
+  nav {
+    grid-area: sidebar;
+    background-color: #f6c356;
+    height: auto; /* Ajusta a altura do menu lateral para dispositivos móveis */
+  }
+  main {
+    grid-area: main;
+    background-color: #b2ee94;
+  }
+  .dados {
+    grid-area: dados;
+    background-color: #ff8983;
+  }
+  .estatisticas {
+    grid-area: estatisticas;
+    background-color: #99c2f3;
+  }
+}
