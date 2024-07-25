@@ -15,6 +15,8 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { CpTesteComponent } from './components/cp-teste/cp-teste.component';
 import { SubMenuComponent } from './sub-menu/sub-menu.component';
+import { CadastroComponent } from './components/cadastro/cadastro.component';
+import { BackofficeComponent } from './components/backoffice/backoffice.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { SubMenuComponent } from './sub-menu/sub-menu.component';
     CardsComponent,
     CpTesteComponent,
     SubMenuComponent,
+    CadastroComponent,
+    BackofficeComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [provideClientHydration()],
