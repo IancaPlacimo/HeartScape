@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { CpTesteComponent } from './components/cp-teste/cp-teste.component';
+import { SubMenuComponent } from './sub-menu/sub-menu.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { CpTesteComponent } from './components/cp-teste/cp-teste.component';
     CarouselComponent,
     CardsComponent,
     CpTesteComponent,
+    SubMenuComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [provideClientHydration()],

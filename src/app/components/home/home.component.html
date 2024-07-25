@@ -1,29 +1,32 @@
-<div class="layout-geral">
-  <nav>
-    <h1>Menu</h1>
-    <ul class="links">
-      <br />
-      <li class="link">Sentimentos</li>
-      <li class="link">Recursos e Dicas</li>
-      <li class="link">Notificações</li>
-      <li class="link">Barra de Navegação</li>
-      <li class="link">Feedback e Suporte</li>
-      <li class="link">Design e Estilo</li>
-      <li class="link">Postagem</li>
-    </ul>
-  </nav>
-  <main>
-    <h1>Bem vinda, Ianca Placimo!</h1>
-    <br />
-    <div class="div-cards">
-      <div class="card">card 1</div>
-      <div class="card">card 2</div>
-      <div class="card">card 3</div>
-      <div class="card">card 4</div>
+<div class="conteudo">
+  <app-sub-menu></app-sub-menu>
+
+  <div class="conteudo__home">
+    <div class="conteudo__home__infos">
+      <p class="title">Bem vinda, Ianca!</p>
+      <p class="sub-title">Como você está se sentindo hoje?</p>
+      <form action="">
+        <input
+          placeholder="Digite aqui"
+          class="input"
+          name="text"
+          type="text"
+        />
+        <div class="div-button">
+          <button class="button-confirm">Enviar →</button>
+        </div>
+      </form>
     </div>
-  </main>
-  <article class="dados">
-    <p>Tags</p>
-  </article>
-  <article class="estatisticas">estatísticas</article>
+    <div class="conteudo__home__sentimentos">
+      <h1>Meus Sentimentos</h1>
+      <div class="conteudo__home__sentimentos__cards">
+        <app-cp-teste></app-cp-teste>
+        <app-cp-teste></app-cp-teste>
+        <app-cp-teste></app-cp-teste>
+        <app-cp-teste></app-cp-teste>
+        <app-cp-teste></app-cp-teste>
+        <app-cp-teste></app-cp-teste>
+      </div>
+    </div>
+  </div>
 </div>
