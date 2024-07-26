@@ -4,10 +4,10 @@ import { UserService } from '../../user.service';
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
-  styleUrl: './cadastro.component.scss',
+  styleUrls: ['./cadastro.component.scss'],
 })
 export class CadastroComponent {
-  name: string = '';
+  username: string = '';
   email: string = '';
   password: string = '';
 
@@ -18,25 +18,25 @@ export class CadastroComponent {
   }
 
   createUsers() {
-    if (this.name && this.email && this.password) {
-      this.userService
-        .createUser({
-          name: this.name,
-          email: this.email,
-          password: this.password,
-        })
-        .subscribe(
-          (response) => {
-            console.log('Resposta recebida:', response);
-            alert(response.message || 'Usuário criado com sucesso!');
-          },
-          (error) => {
-            console.error('Erro ao criar usuário:', error);
-            alert(error.error?.error || 'Erro ao criar usuário.');
+    this.userService
+      .createUser({
+        username: this.username,
+        email: this.email,
+        password: this.password,
+      })
+      .subscribe(
+        (response) => {
+          console.log('Resposta recebida:', response);
+          alert(response.message || 'Usuário criado com sucesso!');
+        },
+        (error) => {
+          console.error('Erro ao criar usuário:', error);
+          if (error.error instanceof ErrorEvent) {
+            alert(`Erro: ${error.error.message}`);
+          } else {
+            alert(`Erro do servidor: ${error.status} ${error.message}`);
           }
-        );
-    } else {
-      alert('Preencha todos os campos.');
-    }
+        }
+      );
   }
 }

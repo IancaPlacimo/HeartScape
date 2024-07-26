@@ -35,7 +35,7 @@ export class BackofficeComponent {
     this.currentUserId = user.id;
     this.name = user.name;
     this.email = user.email;
-    this.password = ''; // Não preencher a senha por questões de segurança
+    this.password = '';
   }
 
   deleteUser(id: number) {
