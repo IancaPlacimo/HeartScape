@@ -7,7 +7,7 @@ HeartScape é uma plataforma onde as pessoas podem expressar seus sentimentos an
 - **Linguagens de Programação**: HTML, CSS, JavaScript
 - **Frameworks**: Angular, Node.js
 - **Bibliotecas**: Bootstrap, Express
-- **Banco de Dados**: MongoDB
+- **Banco de Dados**: MySQL
 
 ## Funcionalidades
 
